@@ -1,0 +1,7 @@
+{
+  "domain": "somnofy",
+  "name": "Somnofy Sleep Tracker",
+  "documentation": "https://www.home-assistant.io/integrations/somnofy",
+  "dependencies": ["mqtt"],
+  "codeowners": ["@aleks"]
+}
