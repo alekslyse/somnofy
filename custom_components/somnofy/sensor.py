@@ -4,18 +4,23 @@ from homeassistant.components import mqtt
 from homeassistant.core import callback
 from homeassistant.helpers.entity import Entity
 from homeassistant.util import slugify
+import logging
 
 from .definitions import DEFINITIONS
 
 DOMAIN = "somnofy"
 
+_LOGGER = logging.getLogger(__name__)
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     """Set up Somnofy sensors."""
+    _LOGGER.info("Setting up somnofy sensors")
 
     sensors = []
     for topic in DEFINITIONS:
         sensors.append(SomnofySensor(topic))
+
+    _LOGGER.info("Sensors found: %s", sensors)
 
     async_add_entities(sensors)
 
@@ -29,6 +34,8 @@ class SomnofySensor(Entity):
         self._definition = DEFINITIONS[topic]
 
         self._entity_id = slugify(topic.replace("/", "_"))
+        _LOGGER.info("Entity ID: %s", self._entity_id)
+
         self._topic = topic
 
         self._name = self._definition.get("name", topic.split("/")[-1])
@@ -45,6 +52,8 @@ class SomnofySensor(Entity):
         @callback
         def message_received(message):
             """Handle new MQTT messages."""
+
+            _LOGGER.info("Somnofy got mqtt %s", message.payload)
 
             if self._transform is not None:
                 self._state = self._transform(message.payload)
