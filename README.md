@@ -1,4 +1,4 @@
-## nordpool custom component for home assistant
+## Somnofy custom component for home assistant
 
 ## Installation
 
