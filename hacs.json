@@ -1,6 +1,7 @@
 {
-    "name": "somnofy",
+    "name": "Somnofy: Non-Contact Smart Sleep Monitor",
     "render_readme": true,
+    "domains": ["sensor","somnofy"],
     "iot_class": "Local Polling"
 
 }
