@@ -1,7 +1,16 @@
 {
   "domain": "somnofy",
-  "name": "Somnofy Sleep Tracker",
+  "name": "Somnofy Non-Contact Smart Sleep Monitor",
+  "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/somnofy",
   "dependencies": ["mqtt"],
-  "codeowners": ["@aleks"]
+  "requirements": [],
+  "dhcp": [
+    {
+      "hostname": "somnofy_*",
+      "macaddress": "3C1A9E*"
+    }
+  ],
+  "codeowners": ["@alekslyse"],
+  "iot_class": "local_polling"
 }

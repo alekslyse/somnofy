@@ -20,28 +20,4 @@ unzip somnofy.X.Y-Z.zip
 
 ### Usage
 
-Set up the sensor using the webui or use a yaml.
-
-The sensors tries to set some sane default so a minimal setup can be
-
-```
-sensor:
-  - platform: somnofy
-```
-
-
-
-in configuration.yaml
-
-```
-somnofy:
-
-sensor:
-  - platform: somnofy
-
-    SERIAL: 123456
-
-```
-
-
-run the create_template script if you want one sensors for each hour. See the help options with ```python create_template --help``` you can run the script anyhere python is installed. (install the required packages pyyaml and click using `pip install packagename`)
+Set up the sensor using the webui
