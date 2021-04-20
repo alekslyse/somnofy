@@ -6,7 +6,7 @@
   "issue_tracker": "https://github.com/alekslyse/somnofy/issues",
   "dependencies": ["mqtt"],
   "requirements": [],
-  "version": "0.7",
+  "version": "0.8",
   "dhcp": [
     {
       "hostname": "somnofy_*",
